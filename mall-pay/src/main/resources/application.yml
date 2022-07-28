@@ -1,0 +1,29 @@
+server:
+  port: 9006 #服务端口
+
+spring:
+  application:
+    name: mall-pay #应用的名字
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/mall_pay?serverTimezone=GMT%2B8&characterEncoding=utf-8
+    username: root
+    password: root
+
+mybatis-plus:
+  configuration: #sql日志
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath:/mapper/**/*.xml
+
+logging:
+  level:
+    root: info
