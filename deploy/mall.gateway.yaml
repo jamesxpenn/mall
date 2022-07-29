@@ -13,6 +13,10 @@ spec:
     metadata:
       labels:
         app: mall-gateway
+      annotations:
+        dapr.io/enabled: "true"
+        dapr.io/app-id: "mallgateway"
+        dapr.io/app-port: "9001"           
     spec:
       containers:
       - image: daprxp.azurecr.io/mall-gateway:v3

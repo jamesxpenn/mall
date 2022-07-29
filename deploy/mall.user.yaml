@@ -13,6 +13,10 @@ spec:
     metadata:
       labels:
         app: mall-user
+      annotations:
+        dapr.io/enabled: "true"
+        dapr.io/app-id: "malluser"
+        dapr.io/app-port: "9000"        
     spec:
       containers:
       - image: daprxp.azurecr.io/mall-user:v4

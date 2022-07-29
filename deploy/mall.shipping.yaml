@@ -13,6 +13,10 @@ spec:
     metadata:
       labels:
         app: mall-shipping
+      annotations:
+        dapr.io/enabled: "true"
+        dapr.io/app-id: "mallshipping"
+        dapr.io/app-port: "9004"         
     spec:
       containers:
       - image: daprxp.azurecr.io/mall-shipping:v1

@@ -13,6 +13,10 @@ spec:
     metadata:
       labels:
         app: mall-cart
+      annotations:
+        dapr.io/enabled: "true"
+        dapr.io/app-id: "mallcart"
+        dapr.io/app-port: "9003"         
     spec:
       containers:
       - image: daprxp.azurecr.io/mall-cart:v1
