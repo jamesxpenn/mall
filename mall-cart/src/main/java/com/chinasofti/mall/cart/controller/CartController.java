@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.io.IOException;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -27,10 +28,6 @@ public class CartController {
 
 	@GetMapping("/carts/listcards/{userid}")
 	public List<Cart> listcards(@PathVariable Integer userid) {
-		//User user = (User) session.getAttribute(MallConst.CURRENT_USER);
-
-		//Integer userId= Integer.valueOf(CartLoginInterceptor.getUserId());
-
 		List<Cart> cartList = cartService.listForCart(userid).stream()
 		.filter(Cart::getProductSelected)
 		.collect(Collectors.toList());
@@ -40,14 +37,13 @@ public class CartController {
 
 	@GetMapping("/carts")
 	public ResponseVo<CartVo> list() {
-		//User user = (User) session.getAttribute(MallConst.CURRENT_USER);
 
 		Integer userId= Integer.valueOf(CartLoginInterceptor.getUserId());
 		return cartService.list(userId);
 	}
 
 	@PostMapping("/carts")
-	public ResponseVo<CartVo> add(@Valid @RequestBody CartAddForm cartAddForm) {
+	public ResponseVo<CartVo> add(@Valid @RequestBody CartAddForm cartAddForm) throws IOException, InterruptedException{
 
 		return cartService.add(Integer.valueOf(CartLoginInterceptor.getUserId()), cartAddForm);
 
@@ -91,18 +87,4 @@ public class CartController {
 		return cartService.sum(Integer.valueOf(CartLoginInterceptor.getUserId()));
 
 	}
-
-
-//	@GetMapping("/carts/products/sum")
-//	public ResponseVo<Integer> sum() {
-//
-//		System.out.println(123);
-//		return null;
-//	}
-//
-//	@GetMapping("/carts")
-//	public ResponseVo<CartVo> list() {
-//		System.out.println("123123");
-//		return null;
-//	}
 }

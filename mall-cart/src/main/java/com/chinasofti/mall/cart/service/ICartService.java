@@ -7,6 +7,7 @@ import com.chinasofti.mall.cart.vo.ResponseVo;
 import com.chinasofti.mall.common.dto.Cart;
 import com.chinasofti.mall.common.dto.Response;
 
+import java.io.IOException;
 import java.util.List;
 
 /**
@@ -14,7 +15,7 @@ import java.util.List;
  */
 public interface ICartService {
 
-	ResponseVo<CartVo> add(Integer uid, CartAddForm form);
+	ResponseVo<CartVo> add(Integer uid, CartAddForm form) throws  InterruptedException, IOException;
 
 	ResponseVo<CartVo> list(Integer uid);
 

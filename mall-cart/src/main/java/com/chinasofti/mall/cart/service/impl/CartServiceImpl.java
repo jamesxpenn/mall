@@ -5,6 +5,8 @@ import com.chinasofti.mall.common.dto.Cart;
 import com.chinasofti.mall.common.dto.ProductDetail;
 import com.chinasofti.mall.common.dto.Response;
 import com.chinasofti.mall.common.enums.ResponseEnum;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
 import com.chinasofti.mall.cart.enums.ProductStatusEnum;
 import com.chinasofti.mall.cart.form.CartAddForm;
@@ -19,7 +21,13 @@ import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
+import java.io.IOException;
 import java.math.BigDecimal;
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -32,6 +40,11 @@ public class CartServiceImpl implements ICartService {
 
 	private final static String CART_REDIS_KEY_TEMPLATE = "cart_%d";
 
+	private static final HttpClient httpClient = HttpClient.newBuilder()
+			.version(HttpClient.Version.HTTP_2)
+			.connectTimeout(Duration.ofSeconds(10))
+			.build();
+
 	@Autowired
 	private ProductFeign productFeign;
 
@@ -40,15 +53,30 @@ public class CartServiceImpl implements ICartService {
 
 	private Gson gson = new Gson();
 
+	private static final String DAPR_HTTP_PORT = System.getenv().getOrDefault("DAPR_HTTP_PORT", "3500");
+
+
 	@Override
-	public ResponseVo<CartVo> add(Integer uid, CartAddForm form) {
+	public ResponseVo<CartVo> add(Integer uid, CartAddForm form) throws IOException, InterruptedException {
+
+		/**
+		 * add dapr service invocation
+		 */
+		String dapr_url = "http://localhost:"+DAPR_HTTP_PORT+"/products/"+form.getProductId();
+
+		HttpRequest request = HttpRequest.newBuilder().GET()
+				.uri(URI.create(dapr_url))
+				.header("dapr-app-id", "mallproduct")
+				.build();
+		HttpResponse<String> httpResponse = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
+
+		ObjectMapper objectMapper = new ObjectMapper();
+		Response<ProductDetail> response = objectMapper.readValue(httpResponse.body(), Response.class);
+		ProductDetail product = objectMapper.convertValue(response.getData(), new TypeReference<ProductDetail>(){});
 		Integer quantity = 1;
 
-		//Product product = productMapper.selectByPrimaryKey(form.getProductId());
-
-		Response<ProductDetail> productvo = productFeign.getProduct(form.getProductId());
-
-		ProductDetail product=productvo.getData();
+//		Response<ProductDetail> productvo = productFeign.getProduct(form.getProductId());
+//		ProductDetail product=productvo.getData();
 
 		//商品是否存在
 		if (product == null) {
