@@ -1,0 +1,66 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: mall-order
+  name: mall-order
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mall-order
+  template:
+    metadata:
+      labels:
+        app: mall-order
+    spec:
+      containers:
+      - image: daprxp.azurecr.io/mall-order:v1
+        name: mall-order
+        ports:
+        - containerPort: 9005
+        env:
+        - name: MYSQL_USER
+          valueFrom:
+            secretKeyRef:
+             name: db-mysql
+             key: username
+        - name: MYSQL_PWD
+          valueFrom:
+            secretKeyRef:
+             name: db-mysql
+             key: password             
+        - name: MYSQL_HOST
+          valueFrom:
+            secretKeyRef:
+             name: db-mysql
+             key: host                 
+        - name: MYSQL_PORT
+          valueFrom:
+            secretKeyRef:
+             name: db-mysql
+             key: port                 
+        - name: NACOS_HOST
+          valueFrom:
+            secretKeyRef:
+             name: nacos-server
+             key: host                     
+        - name: NACOS_PORT
+          valueFrom:
+            secretKeyRef:
+             name: nacos-server
+             key: port
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: mall-order
+  name: mall-order
+spec:
+  ports:
+  - port: 9005
+    protocol: TCP
+    targetPort: 9005
+  selector:
+    app: mall-order 
