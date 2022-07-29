@@ -1,8 +1,0 @@
-com/chinasofti/mall/shipping/dao/ShippingMapper.class
-com/chinasofti/mall/shipping/service/IShippingService.class
-com/chinasofti/mall/shipping/service/impl/ShippingServiceImpl.class
-com/chinasofti/mall/shipping/MallShippingApplication.class
-com/chinasofti/mall/shipping/intercepter/UserLoginInterceptor.class
-com/chinasofti/mall/shipping/config/InterceptorConfig.class
-com/chinasofti/mall/shipping/controller/ShippingController.class
-com/chinasofti/mall/shipping/form/ShippingForm.class
