@@ -1,0 +1,8 @@
+/home/azureuser/xuepeng/mall/mall-shipping/src/main/java/com/chinasofti/mall/shipping/service/IShippingService.java
+/home/azureuser/xuepeng/mall/mall-shipping/src/main/java/com/chinasofti/mall/shipping/form/ShippingForm.java
+/home/azureuser/xuepeng/mall/mall-shipping/src/main/java/com/chinasofti/mall/shipping/controller/ShippingController.java
+/home/azureuser/xuepeng/mall/mall-shipping/src/main/java/com/chinasofti/mall/shipping/MallShippingApplication.java
+/home/azureuser/xuepeng/mall/mall-shipping/src/main/java/com/chinasofti/mall/shipping/dao/ShippingMapper.java
+/home/azureuser/xuepeng/mall/mall-shipping/src/main/java/com/chinasofti/mall/shipping/service/impl/ShippingServiceImpl.java
+/home/azureuser/xuepeng/mall/mall-shipping/src/main/java/com/chinasofti/mall/shipping/config/InterceptorConfig.java
+/home/azureuser/xuepeng/mall/mall-shipping/src/main/java/com/chinasofti/mall/shipping/intercepter/UserLoginInterceptor.java

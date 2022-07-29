@@ -1,0 +1,14 @@
+/home/azureuser/xuepeng/mall/mall-order/src/main/java/com/chinasofti/mall/order/feign/CartFeign.java
+/home/azureuser/xuepeng/mall/mall-order/src/main/java/com/chinasofti/mall/order/service/impl/OrderServiceImpl.java
+/home/azureuser/xuepeng/mall/mall-order/src/main/java/com/chinasofti/mall/order/dao/OrderMapper.java
+/home/azureuser/xuepeng/mall/mall-order/src/main/java/com/chinasofti/mall/order/pojo/Order.java
+/home/azureuser/xuepeng/mall/mall-order/src/main/java/com/chinasofti/mall/order/MallOrderApplication.java
+/home/azureuser/xuepeng/mall/mall-order/src/main/java/com/chinasofti/mall/order/dao/OrderItemMapper.java
+/home/azureuser/xuepeng/mall/mall-order/src/main/java/com/chinasofti/mall/order/feign/ShippingFeign.java
+/home/azureuser/xuepeng/mall/mall-order/src/main/java/com/chinasofti/mall/order/pojo/OrderItem.java
+/home/azureuser/xuepeng/mall/mall-order/src/main/java/com/chinasofti/mall/order/intercepter/UserLoginInterceptor.java
+/home/azureuser/xuepeng/mall/mall-order/src/main/java/com/chinasofti/mall/order/feign/ProductFeign.java
+/home/azureuser/xuepeng/mall/mall-order/src/main/java/com/chinasofti/mall/order/controller/OrderController.java
+/home/azureuser/xuepeng/mall/mall-order/src/main/java/com/chinasofti/mall/order/service/IOrderService.java
+/home/azureuser/xuepeng/mall/mall-order/src/main/java/com/chinasofti/mall/order/config/InterceptorConfig.java
+/home/azureuser/xuepeng/mall/mall-order/src/main/java/com/chinasofti/mall/order/form/OrderCreateForm.java

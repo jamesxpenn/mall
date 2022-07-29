@@ -1,0 +1,16 @@
+/home/azureuser/xuepeng/mall/mall-product/src/main/java/com/chinasofti/mall/product/dao/CategoryMapper.java
+/home/azureuser/xuepeng/mall/mall-product/src/main/java/com/chinasofti/mall/product/service/impl/ProductServiceImpl.java
+/home/azureuser/xuepeng/mall/mall-product/src/main/java/com/chinasofti/mall/product/service/IProductService.java
+/home/azureuser/xuepeng/mall/mall-product/src/main/java/com/chinasofti/mall/product/service/ICategoryService.java
+/home/azureuser/xuepeng/mall/mall-product/src/main/java/com/chinasofti/mall/product/service/impl/CategoryServiceImpl.java
+/home/azureuser/xuepeng/mall/mall-product/src/main/java/com/chinasofti/mall/product/dao/ProductMapper.java
+/home/azureuser/xuepeng/mall/mall-product/src/main/java/com/chinasofti/mall/product/MallProductApplication.java
+/home/azureuser/xuepeng/mall/mall-product/src/main/java/com/chinasofti/mall/product/consts/MallConst.java
+/home/azureuser/xuepeng/mall/mall-product/src/main/java/com/chinasofti/mall/product/vo/ResponseVo.java
+/home/azureuser/xuepeng/mall/mall-product/src/main/java/com/chinasofti/mall/product/vo/CategoryVo.java
+/home/azureuser/xuepeng/mall/mall-product/src/main/java/com/chinasofti/mall/product/enums/ResponseEnum.java
+/home/azureuser/xuepeng/mall/mall-product/src/main/java/com/chinasofti/mall/product/enums/ProductStatusEnum.java
+/home/azureuser/xuepeng/mall/mall-product/src/main/java/com/chinasofti/mall/product/controller/ProductController.java
+/home/azureuser/xuepeng/mall/mall-product/src/main/java/com/chinasofti/mall/product/pojo/Category.java
+/home/azureuser/xuepeng/mall/mall-product/src/main/java/com/chinasofti/mall/product/vo/ProductDetailVo.java
+/home/azureuser/xuepeng/mall/mall-product/src/main/java/com/chinasofti/mall/product/vo/ProductVo.java

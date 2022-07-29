@@ -1,0 +1,14 @@
+com/chinasofti/mall/user/enums/RoleEnum.class
+com/chinasofti/mall/user/service/impl/UserServiceImpl.class
+com/chinasofti/mall/user/exception/UserLoginException.class
+com/chinasofti/mall/user/controller/UserController.class
+com/chinasofti/mall/user/consts/MallConst.class
+com/chinasofti/mall/user/UserLoginInterceptor.class
+com/chinasofti/mall/user/form/UserLoginForm.class
+com/chinasofti/mall/user/dao/UserMapper.class
+com/chinasofti/mall/user/MallUserApplication.class
+com/chinasofti/mall/user/service/IUserService.class
+com/chinasofti/mall/user/form/UserRegisterForm.class
+com/chinasofti/mall/user/InterceptorConfig.class
+com/chinasofti/mall/user/vo/ResponseVo.class
+com/chinasofti/mall/user/enums/ResponseEnum.class
