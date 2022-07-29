@@ -6,9 +6,9 @@ spring:
   application:
     name: mall-cart
   redis:
-    host: ${REDIS_HOST:52.226.251.171}
+    host: ${REDIS_HOST:localhost}
     port: ${REDIS_PORT:6379}
-    password: ${REDIS_PASSWORD:ZirN6PXUqE}
+#    password: ${REDIS_PASSWORD:ZirN6PXUqE}
 
 logging:
   pattern:

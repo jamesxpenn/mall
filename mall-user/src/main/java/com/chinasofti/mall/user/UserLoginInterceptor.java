@@ -16,6 +16,9 @@ import javax.servlet.http.HttpServletResponse;
 @Slf4j
 public class UserLoginInterceptor implements HandlerInterceptor {
 
+
+	private static final ThreadLocal<String> THREAD_LOCAL=new ThreadLocal<>();
+
 	/**
 	 * true 表示继续流程，false表示中断
 	 * @param request
@@ -31,6 +34,8 @@ public class UserLoginInterceptor implements HandlerInterceptor {
 		if(StringUtils.isBlank(userid)){{
 			throw new UserLoginException();
 		}}
+
+		THREAD_LOCAL.set(userid);
 		return true;
 //		User user = (User) request.getSession().getAttribute(MallConst.CURRENT_USER);
 //		if (user == null) {
@@ -42,5 +47,9 @@ public class UserLoginInterceptor implements HandlerInterceptor {
 ////			return ResponseVo.error(ResponseEnum.NEED_LOGIN);
 //		}
 //		return true;
+	}
+
+	public static String getUserId(){
+		return THREAD_LOCAL.get();
 	}
 }

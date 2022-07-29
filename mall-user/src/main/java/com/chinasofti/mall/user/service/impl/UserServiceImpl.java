@@ -77,6 +77,13 @@ public class UserServiceImpl implements IUserService {
 		return ResponseVo.success(user);
 	}
 
+	@Override
+	public ResponseVo<User> getUserByUserID(Integer userId) {
+		User user = userMapper.selectByPrimaryKey(userId);
+
+		return ResponseVo.success(user);
+	}
+
 	private void error() {
 		throw new RuntimeException("意外错误");
 	}

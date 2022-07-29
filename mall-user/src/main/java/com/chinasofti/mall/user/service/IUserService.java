@@ -17,4 +17,9 @@ public interface IUserService {
 	 * 登录
 	 */
 	ResponseVo<User> login(String username, String password);
+
+	/**
+	 * 获取用户信息
+	 */
+	ResponseVo<User> getUserByUserID(Integer userId);
 }
