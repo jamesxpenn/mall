@@ -1,5 +1,7 @@
 package com.chinasofti.mall.order.pojo;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
 import java.math.BigDecimal;
@@ -33,7 +35,9 @@ public class Order {
 
     private Date closeTime;
 
-    private Date createTime;
+//    @JsonFormat(locale = "zh",timezone = "GMT+8",pattern = "yyyy-MM-dd HH:mm:ss")
+//    @JsonProperty("create_time")
+    private String createTime;
 
     private Date updateTime;
 }

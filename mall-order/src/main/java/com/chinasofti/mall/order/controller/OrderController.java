@@ -7,6 +7,7 @@ import com.chinasofti.mall.order.intercepter.UserLoginInterceptor;
 import com.chinasofti.mall.order.service.IOrderService;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
@@ -48,4 +49,5 @@ public class OrderController {
 	public Response cancel(@PathVariable Long orderNo) {
 		return orderService.cancel(Integer.valueOf(UserLoginInterceptor.getUserId()), orderNo);
 	}
+
 }

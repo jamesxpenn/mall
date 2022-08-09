@@ -20,4 +20,6 @@ public interface OrderMapper {
     List<Order> selectByUid(Integer uid);
 
     Order selectByOrderNo(Long orderNo);
+
+    List<Order> selectNoPayOrderTimeOut(Integer status);
 }

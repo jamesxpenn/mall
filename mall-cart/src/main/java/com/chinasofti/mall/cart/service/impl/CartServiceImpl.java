@@ -103,7 +103,7 @@ public class CartServiceImpl implements ICartService {
 			Integer productId = Integer.valueOf(entry.getKey());
 			Cart cart = gson.fromJson(entry.getValue(), Cart.class);
 
-		//	Product product = productMapper.selectByPrimaryKey(productId);
+			//	Product product = productMapper.selectByPrimaryKey(productId);
 
 
 			Response<ProductDetail> productvo = productFeign.getProduct(productId);

@@ -27,6 +27,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.CollectionUtils;
 
 import java.math.BigDecimal;
+import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -286,6 +287,12 @@ public class OrderServiceImpl implements IOrderService {
 		order.setOrderNo(orderNo);
 		order.setUserId(uid);
 		order.setShippingId(shippingId);
+
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
+		String dateStr = sdf.format(new Date());
+		order.setCreateTime(dateStr);
+
 		order.setPayment(payment);
 		order.setPaymentType(PaymentTypeEnum.PAY_ONLINE.getCode());
 		order.setPostage(0);

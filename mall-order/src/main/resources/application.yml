@@ -4,6 +4,13 @@ spring:
     username: ${MYSQL_USER:root}
     password: ${MYSQL_PWD:root}
     url: jdbc:mysql://${MYSQL_HOST:localhost}:${MYSQL_PORT:3306}/mall_order?characterEncoding=utf-8&useSSL=false&serverTimezone=GMT
+  rabbitmq:
+    host: ${MQ_HOST:localhost}
+    port: ${MQ_PORT:5672}
+    username: ${MQ_USER:guest}
+    password: ${MQ_PWD:guest}
+  jackson:
+    time-zone: GMT+8
   cloud:
     nacos:
       discovery:

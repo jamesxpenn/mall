@@ -31,7 +31,7 @@ public class OrderVo {
 
 	private Date closeTime;
 
-	private Date createTime;
+	private String createTime;
 
 	private List<OrderItemVo> orderItemVoList;
 
